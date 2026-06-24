@@ -20,9 +20,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from app.api.routes import health, imports
+from app.api.routes import health, imports, analysis
 app.include_router(health.router, tags=["Health"])
 app.include_router(imports.router)
+app.include_router(analysis.router)
 
 
 @app.on_event("startup")
