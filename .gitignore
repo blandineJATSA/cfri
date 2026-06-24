@@ -28,3 +28,6 @@ backend/uploads/
 # Docker volumes
 postgres_data/
 redis_data/
+
+node_modules/
+frontend/node_modules/
