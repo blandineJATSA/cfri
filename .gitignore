@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Secrets — jamais sur Git
+.env
+*.env.local
+
+# Alembic — on garde les versions mais pas le cache
+*.pyc
+
+# Node
+node_modules/
+dist/
+.next/
+
+# Uploads locaux
+backend/uploads/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Docker volumes
+postgres_data/
+redis_data/
