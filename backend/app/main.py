@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
+from app.database import SessionLocal
 
 settings = get_settings()
 
@@ -19,10 +20,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from app.api.routes import health
+from app.api.routes import health, imports
 app.include_router(health.router, tags=["Health"])
+app.include_router(imports.router)
 
 
 @app.on_event("startup")
 async def startup():
     print(f"🚀 CFRI API démarrée — env: {settings.app_env}")
+    # Créer les données de base au démarrage
+    from app.services.seed import create_demo_organization
+    db = SessionLocal()
+    try:
+        create_demo_organization(db)
+    finally:
+        db.close()
