@@ -112,7 +112,7 @@ def save_analysis(db: Session, feedback: Feedback, analysis: dict) -> FeedbackAn
     return feedback_analysis
 
 
-def analyze_pending_feedbacks(db: Session, organization_id: str) -> dict:
+def analyze_pending_feedbacks(db: Session, organization_id: str, limit: int = 20) -> dict:
     """
     Analyse tous les feedbacks qui n'ont pas encore été analysés.
     Retourne un résumé : combien analysés, combien en erreur.
@@ -123,8 +123,9 @@ def analyze_pending_feedbacks(db: Session, organization_id: str) -> dict:
         .outerjoin(FeedbackAnalysis)
         .filter(
             Feedback.organization_id == organization_id,
-            FeedbackAnalysis.id == None  # Pas encore analysé
+            FeedbackAnalysis.id == None
         )
+        .limit(limit)
         .all()
     )
 

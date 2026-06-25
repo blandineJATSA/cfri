@@ -14,19 +14,15 @@ DEMO_ORG_ID = "00000000-0000-0000-0000-000000000001"
 
 @router.post("/run")
 def run_analysis(db: Session = Depends(get_db)):
-    """
-    Analyse tous les feedbacks non encore analysés.
-    Appelle l'IA pour chaque feedback et sauvegarde les résultats.
-    """
     if not ai_service.settings.openai_api_key or \
        ai_service.settings.openai_api_key == "sk-REMPLACER_ICI":
         raise HTTPException(
             status_code=400,
             detail="Clé OpenAI non configurée dans le fichier .env"
         )
-
-    result = ai_service.analyze_pending_feedbacks(db, DEMO_ORG_ID)
+    result = ai_service.analyze_pending_feedbacks(db, DEMO_ORG_ID, limit=20)
     return result
+
 
 
 @router.get("/status")
