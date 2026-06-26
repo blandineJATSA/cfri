@@ -1,10 +1,8 @@
 import { NavLink } from 'react-router-dom'
+import { useUser, useClerk } from '@clerk/clerk-react'
 import {
-  LayoutDashboard,
-  AlertTriangle,
-  Users,
-  Upload,
-  TrendingUp,
+  LayoutDashboard, AlertTriangle, Users,
+  Upload, TrendingUp, LogOut
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -16,6 +14,9 @@ const navItems = [
 ]
 
 export function Sidebar() {
+  const { user } = useUser()
+  const { signOut } = useClerk()
+
   return (
     <aside className="flex h-screen w-56 flex-col bg-zinc-900 border-r border-zinc-800">
       {/* Logo */}
@@ -50,12 +51,26 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      {/* Footer */}
-      <div className="p-3 border-t border-zinc-800">
+      {/* Footer — utilisateur connecté */}
+      <div className="p-3 border-t border-zinc-800 space-y-2">
+        {/* Infos utilisateur */}
         <div className="rounded-md bg-white/5 px-3 py-2">
-          <p className="text-xs text-zinc-500">Organisation</p>
-          <p className="text-sm text-zinc-300 font-medium">Demo</p>
+          <p className="text-xs text-zinc-500 truncate">
+            {user?.primaryEmailAddress?.emailAddress ?? 'Utilisateur'}
+          </p>
+          <p className="text-xs text-zinc-400 mt-0.5">
+            {user?.organizationMemberships?.[0]?.organization?.name ?? 'Organisation'}
+          </p>
         </div>
+
+        {/* Bouton déconnexion */}
+        <button
+          onClick={() => signOut({ redirectUrl: '/' })}
+          className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-xs text-zinc-500 hover:bg-white/5 hover:text-zinc-300 transition-colors"
+        >
+          <LogOut className="h-3.5 w-3.5" />
+          Se déconnecter
+        </button>
       </div>
     </aside>
   )

@@ -10,10 +10,13 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379"
     openai_api_key: str = ""
     ai_model: str = "gpt-4o-mini"
+    clerk_secret_key: str = ""
+    clerk_jwks_url: str = ""
 
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
     @property
     def is_production(self) -> bool:

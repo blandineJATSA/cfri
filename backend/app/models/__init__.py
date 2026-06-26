@@ -63,6 +63,7 @@ class Organization(Base):
     name = Column(String(255), nullable=False)
     slug = Column(String(100), unique=True, nullable=False)
     plan = Column(String(50), default="free")
+    clerk_org_id = Column(String(255), unique=True, nullable=True)
     created_at = Column(DateTime, default=now)
     updated_at = Column(DateTime, default=now, onupdate=now)
     users = relationship("User", back_populates="organization")
@@ -77,6 +78,7 @@ class User(Base):
     __tablename__ = "users"
     id = Column(UUID(as_uuid=False), primary_key=True, default=gen_uuid)
     organization_id = Column(UUID(as_uuid=False), ForeignKey("organizations.id"), nullable=False)
+    clerk_user_id = Column(String(255), unique=True, nullable=True)
     email = Column(String(255), nullable=False)
     name = Column(String(255), nullable=True)
     role = Column(SAEnum(UserRole), default=UserRole.member)
