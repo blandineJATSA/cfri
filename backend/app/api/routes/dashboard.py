@@ -1,13 +1,3 @@
-"""
-Routes du dashboard CFRI.
-
-Endpoints :
-- GET /dashboard/summary  → chiffres clés (feedbacks, CA, remboursements...)
-- GET /dashboard/compute  → déclenche le calcul du scoring
-- GET /problems           → top problèmes triés par impact
-- GET /customers/risk     → clients à risque triés par score
-"""
-
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.database import get_db
@@ -16,56 +6,46 @@ from app.models import (
     Order, ProblemCluster, CustomerRiskScore
 )
 from app.services import scoring_service
+from app.middleware.auth import get_current_user
 
 router = APIRouter(tags=["Dashboard"])
 
-DEMO_ORG_ID = "00000000-0000-0000-0000-000000000001"
-
 
 @router.get("/dashboard/summary")
-def get_dashboard_summary(db: Session = Depends(get_db)):
-    """
-    Retourne les chiffres clés du dashboard :
-    - Nombre de feedbacks analysés
-    - Nombre de clients
-    - CA total associé aux problèmes
-    - Remboursements totaux
-    - Nombre de problèmes détectés
-    - Nombre de clients à risque élevé
-    """
+async def get_dashboard_summary(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
+    org_id = current_user["organization_id"]
+
     feedbacks_count = db.query(Feedback).filter(
-        Feedback.organization_id == DEMO_ORG_ID
+        Feedback.organization_id == org_id
     ).count()
 
     analyzed_count = (
         db.query(FeedbackAnalysis)
         .join(Feedback)
-        .filter(Feedback.organization_id == DEMO_ORG_ID)
+        .filter(Feedback.organization_id == org_id)
         .count()
     )
 
     customers_count = db.query(Customer).filter(
-        Customer.organization_id == DEMO_ORG_ID
+        Customer.organization_id == org_id
     ).count()
 
-    # CA et remboursements totaux
-    orders = db.query(Order).filter(
-        Order.organization_id == DEMO_ORG_ID
-    ).all()
+    orders = db.query(Order).filter(Order.organization_id == org_id).all()
     total_revenue = sum(o.total_amount for o in orders)
     total_refunds = sum(o.refund_amount for o in orders)
 
-    # Problèmes détectés
     problems_count = db.query(ProblemCluster).filter(
-        ProblemCluster.organization_id == DEMO_ORG_ID
+        ProblemCluster.organization_id == org_id
     ).count()
 
-    # Clients à risque élevé ou critique
     at_risk = (
         db.query(CustomerRiskScore)
         .join(Customer)
         .filter(
-            Customer.organization_id == DEMO_ORG_ID,
+            Customer.organization_id == org_id,
             CustomerRiskScore.risk_level.in_(["high", "critical"]),
         )
         .count()
@@ -83,15 +63,13 @@ def get_dashboard_summary(db: Session = Depends(get_db)):
 
 
 @router.post("/dashboard/compute")
-def compute_scoring(db: Session = Depends(get_db)):
-    """
-    Déclenche le calcul du scoring :
-    1. Calcule les problem clusters (groupes de problèmes avec impact €)
-    2. Calcule les risk scores des clients
-    """
-    clusters = scoring_service.compute_problem_clusters(db, DEMO_ORG_ID)
-    risk_scores = scoring_service.compute_customer_risk_scores(db, DEMO_ORG_ID)
-
+async def compute_scoring(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
+    org_id = current_user["organization_id"]
+    clusters = scoring_service.compute_problem_clusters(db, org_id)
+    risk_scores = scoring_service.compute_customer_risk_scores(db, org_id)
     return {
         "problems_computed": len(clusters),
         "risk_scores_computed": len(risk_scores),
@@ -99,18 +77,16 @@ def compute_scoring(db: Session = Depends(get_db)):
 
 
 @router.get("/problems")
-def get_problems(db: Session = Depends(get_db)):
-    """
-    Retourne les problèmes triés par impact score décroissant.
-    Ce sont les problèmes qui coûtent le plus cher à l'entreprise.
-    """
+async def get_problems(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
     clusters = (
         db.query(ProblemCluster)
-        .filter(ProblemCluster.organization_id == DEMO_ORG_ID)
+        .filter(ProblemCluster.organization_id == current_user["organization_id"])
         .order_by(ProblemCluster.impact_score.desc())
         .all()
     )
-
     return [
         {
             "id": str(c.id),
@@ -129,18 +105,17 @@ def get_problems(db: Session = Depends(get_db)):
 
 
 @router.get("/customers/risk")
-def get_customers_at_risk(db: Session = Depends(get_db)):
-    """
-    Retourne les clients à risque triés par score décroissant.
-    """
+async def get_customers_at_risk(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
     scores = (
         db.query(CustomerRiskScore, Customer)
         .join(Customer, CustomerRiskScore.customer_id == Customer.id)
-        .filter(Customer.organization_id == DEMO_ORG_ID)
+        .filter(Customer.organization_id == current_user["organization_id"])
         .order_by(CustomerRiskScore.risk_score.desc())
         .all()
     )
-
     return [
         {
             "customer_id": str(customer.id),

@@ -5,6 +5,23 @@ export const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
+/**
+ * Intercepteur de requête — récupère un token Clerk frais avant chaque appel.
+ * Le token Clerk dure 60 secondes mais se renouvelle automatiquement.
+ * On le récupère à chaque requête pour être sûr d'avoir toujours un token valide.
+ */
+api.interceptors.request.use(async (config) => {
+  try {
+    const token = await (window as any).Clerk?.session?.getToken()
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`
+    }
+  } catch (e) {
+    // Clerk pas encore chargé — on continue sans token
+  }
+  return config
+})
+
 // ── Types ──────────────────────────────────────────────
 
 export interface DashboardSummary {

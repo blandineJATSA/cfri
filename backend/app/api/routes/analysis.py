@@ -1,47 +1,46 @@
-"""
-Route pour déclencher l'analyse IA des feedbacks.
-"""
-
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.services import ai_service
+from app.middleware.auth import get_current_user
 
 router = APIRouter(prefix="/analysis", tags=["Analysis"])
 
-DEMO_ORG_ID = "00000000-0000-0000-0000-000000000001"
-
 
 @router.post("/run")
-def run_analysis(db: Session = Depends(get_db)):
+async def run_analysis(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
     if not ai_service.settings.openai_api_key or \
        ai_service.settings.openai_api_key == "sk-REMPLACER_ICI":
         raise HTTPException(
             status_code=400,
-            detail="Clé OpenAI non configurée dans le fichier .env"
+            detail="Clé OpenAI non configurée"
         )
-    result = ai_service.analyze_pending_feedbacks(db, DEMO_ORG_ID, limit=20)
+    result = ai_service.analyze_pending_feedbacks(
+        db, current_user["organization_id"], limit=20
+    )
     return result
 
 
-
 @router.get("/status")
-def analysis_status(db: Session = Depends(get_db)):
-    """
-    Retourne le nombre de feedbacks analysés vs non analysés.
-    """
+async def analysis_status(
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+):
     from app.models import Feedback, FeedbackAnalysis
 
-    total_feedbacks = db.query(Feedback).filter(
-        Feedback.organization_id == DEMO_ORG_ID
+    total = db.query(Feedback).filter(
+        Feedback.organization_id == current_user["organization_id"]
     ).count()
 
     analyzed = db.query(FeedbackAnalysis).join(Feedback).filter(
-        Feedback.organization_id == DEMO_ORG_ID
+        Feedback.organization_id == current_user["organization_id"]
     ).count()
 
     return {
-        "total_feedbacks": total_feedbacks,
+        "total_feedbacks": total,
         "analyzed": analyzed,
-        "pending": total_feedbacks - analyzed,
+        "pending": total - analyzed,
     }
