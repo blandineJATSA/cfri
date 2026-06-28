@@ -49,6 +49,7 @@ def decode_clerk_token(token: str) -> dict:
             signing_key.key,
             algorithms=["RS256"],
             options={"verify_exp": True},
+            leeway=60,
         )
         return data
     except jwt.ExpiredSignatureError:
@@ -79,7 +80,7 @@ async def get_current_user(
     clerk_org_id = org_data.get("id") if org_data else payload.get("org_id")
     clerk_org_slug = org_data.get("slg", "") if org_data else ""
     clerk_org_name = clerk_org_slug.replace("-", " ").title() if clerk_org_slug else "Mon Organisation"
-    user_email = payload.get("email", "")
+    user_email = (payload.get("email") or payload.get("primary_email_address") or "")
 
     if not clerk_user_id:
         raise HTTPException(
