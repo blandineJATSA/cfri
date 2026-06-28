@@ -107,4 +107,7 @@ export const apiClient = {
 
   getAnalysisStatus: () =>
     api.get('/analysis/status').then(r => r.data),
+
+  getJobStatus: (jobId: string) =>
+    api.get(`/analysis/job/${jobId}`).then(r => r.data),
 }

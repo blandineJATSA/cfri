@@ -9,7 +9,7 @@ import { Upload, FileText, Brain, TrendingUp, CheckCircle } from 'lucide-react'
 export default function ImportPage() {
   const [feedbackFile, setFeedbackFile] = useState<File | null>(null)
   const [orderFile, setOrderFile] = useState<File | null>(null)
-  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('idle')
+  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('imported')
   const [log, setLog] = useState<string[]>([])
 
   const addLog = (msg: string) => setLog(prev => [...prev, msg])
@@ -35,12 +35,53 @@ export default function ImportPage() {
 
   // Analyse IA
   const analysisMutation = useMutation({
-    mutationFn: apiClient.runAnalysis,
-    onSuccess: (data) => {
-      addLog(`✅ ${data.success} feedbacks analysés par l'IA`)
+  mutationFn: apiClient.runAnalysis,
+  onSuccess: async (data) => {
+    if (data.status === 'nothing_to_analyze') {
+      addLog('✅ Tous les feedbacks sont déjà analysés')
       setStep('analyzed')
-    },
-    onError: () => addLog('❌ Erreur lors de l\'analyse IA'),
+      return
+    }
+
+    if (data.status === 'completed') {
+      // Fallback sans Redis
+      addLog(`✅ ${data.success} feedbacks analysés`)
+      if (data.total > 0 && data.success > 0) {
+        setTimeout(() => analysisMutation.mutate(), 3000)
+      } else {
+        setStep('analyzed')
+      }
+      return
+    }
+
+    // Job Redis créé — on poll le statut
+    addLog(`🔄 Job créé — analyse en arrière-plan...`)
+    const jobId = data.job_id
+
+    if (jobId) {
+      const pollStatus = async () => {
+        const status = await apiClient.getJobStatus(jobId)
+
+        if (status.status === 'finished') {
+          const result = status.result
+          addLog(`✅ ${result?.success ?? 20} feedbacks analysés par l'IA`)
+          // Relancer pour le batch suivant
+          setTimeout(() => analysisMutation.mutate(), 2000)
+        } else if (status.status === 'failed') {
+          addLog('❌ Erreur — nouvelle tentative dans 5s...')
+          setTimeout(() => analysisMutation.mutate(), 5000)
+        } else {
+          // En cours — on recheck dans 3 secondes
+          setTimeout(pollStatus, 3000)
+        }
+      }
+      setTimeout(pollStatus, 3000)
+    }
+  },
+  onError: () => {
+    addLog('❌ Erreur — nouvelle tentative dans 5s...')
+    setTimeout(() => analysisMutation.mutate(), 5000)
+  },
   })
 
   // Scoring
@@ -60,10 +101,10 @@ export default function ImportPage() {
     refetchInterval: step === 'imported' ? 3000 : false,
   })
 
-  const isLoading =
+
+  const isLoading = 
     uploadFeedbacksMutation.isPending ||
     uploadOrdersMutation.isPending ||
-    analysisMutation.isPending ||
     scoringMutation.isPending
 
   return (
@@ -184,7 +225,7 @@ export default function ImportPage() {
                     addLog('🤖 Analyse IA en cours...')
                     analysisMutation.mutate()
                   }}
-                  disabled={step === 'idle' || isLoading}
+                  disabled={isLoading}
                   size="sm"
                   variant="outline"
                 >
@@ -210,7 +251,7 @@ export default function ImportPage() {
                     addLog('📊 Calcul scoring en cours...')
                     scoringMutation.mutate()
                   }}
-                  disabled={step !== 'analyzed' && step !== 'scored' || isLoading}
+                  disabled={isLoading}
                   size="sm"
                   variant="outline"
                 >
