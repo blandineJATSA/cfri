@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useUser, useClerk } from '@clerk/clerk-react'
 import {
   LayoutDashboard, AlertTriangle, Users,
-  Upload, TrendingUp, LogOut
+  Upload, TrendingUp, LogOut, Settings
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Top Problèmes', href: '/problems', icon: AlertTriangle },
   { label: 'Clients à risque', href: '/customers', icon: Users },
   { label: 'Importer', href: '/import', icon: Upload },
+  { label: 'Paramètres', href: '/settings', icon: Settings },
 ]
 
 export function Sidebar() {

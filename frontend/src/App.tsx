@@ -8,6 +8,7 @@ import DashboardPage from '@/pages/Dashboard'
 import ProblemsPage from '@/pages/Problems'
 import CustomersPage from '@/pages/Customers'
 import ImportPage from '@/pages/Import'
+import SettingsPage from '@/pages/Settings'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/problems" element={<ProblemsPage />} />
           <Route path="/customers" element={<CustomersPage />} />
           <Route path="/import" element={<ImportPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
       </Route>
 

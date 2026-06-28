@@ -64,6 +64,8 @@ class Organization(Base):
     slug = Column(String(100), unique=True, nullable=False)
     plan = Column(String(50), default="free")
     clerk_org_id = Column(String(255), unique=True, nullable=True)
+    stripe_customer_id = Column(String(255), nullable=True)
+    stripe_subscription_id = Column(String(255), nullable=True)
     created_at = Column(DateTime, default=now)
     updated_at = Column(DateTime, default=now, onupdate=now)
     users = relationship("User", back_populates="organization")
