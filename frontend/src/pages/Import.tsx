@@ -9,7 +9,7 @@ import { Upload, FileText, Brain, TrendingUp, CheckCircle } from 'lucide-react'
 export default function ImportPage() {
   const [feedbackFile, setFeedbackFile] = useState<File | null>(null)
   const [orderFile, setOrderFile] = useState<File | null>(null)
-  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('idle')
+  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('imported')
   const [log, setLog] = useState<string[]>([])
 
   const addLog = (msg: string) => setLog(prev => [...prev, msg])
@@ -35,13 +35,27 @@ export default function ImportPage() {
 
   // Analyse IA
   const analysisMutation = useMutation({
-    mutationFn: apiClient.runAnalysis,
-    onSuccess: (data) => {
-      addLog(`✅ ${data.success} feedbacks analysés par l'IA`)
+  mutationFn: apiClient.runAnalysis,
+  onSuccess: (data) => {
+    addLog(`✅ ${data.success} feedbacks analysés par l'IA`)
+    // Si il reste des feedbacks, on relance automatiquement après 3 secondes
+    if (data.total > 0 && data.success > 0) {
+      setTimeout(() => {
+        analysisMutation.mutate()
+      }, 3000)
+    } else {
+      addLog(`✅ Tous les feedbacks sont analysés`)
       setStep('analyzed')
-    },
-    onError: () => addLog('❌ Erreur lors de l\'analyse IA'),
-  })
+    }
+  },
+  onError: () => {
+    addLog('❌ Erreur — nouvelle tentative dans 5s...')
+    // En cas d'erreur on réessaie après 5 secondes
+    setTimeout(() => {
+      analysisMutation.mutate()
+    }, 5000)
+  },
+})
 
   // Scoring
   const scoringMutation = useMutation({
@@ -210,7 +224,7 @@ export default function ImportPage() {
                     addLog('📊 Calcul scoring en cours...')
                     scoringMutation.mutate()
                   }}
-                  disabled={step !== 'analyzed' && step !== 'scored' || isLoading}
+                  disabled={isLoading}
                   size="sm"
                   variant="outline"
                 >
