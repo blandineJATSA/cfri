@@ -10,10 +10,19 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379"
     openai_api_key: str = ""
     ai_model: str = "gpt-4o-mini"
+    clerk_secret_key: str = ""
+    clerk_jwks_url: str = ""
+    stripe_secret_key: str = ""
+    stripe_publishable_key: str = ""
+    stripe_webhook_secret: str = ""
+    stripe_price_starter: str = ""
+    stripe_price_growth: str = ""
+    stripe_price_business: str = ""
 
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
     @property
     def is_production(self) -> bool:

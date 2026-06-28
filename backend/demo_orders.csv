@@ -1,0 +1,501 @@
+email,order_id,total_amount,refund_amount,status,product_name,sku,order_date
+aurelie.blanc@gmail.com,ORD-1000,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-06-10
+jeremy.guerin@yahoo.fr,ORD-1001,69.8,0.0,completed,Short bermuda,SHO-012,2026-06-20
+julie.dubois@gmail.com,ORD-1002,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-04-01
+laura.muller@gmail.com,ORD-1003,39.9,0.0,completed,Legging sport,LEG-009,2026-06-23
+oceane.rousseau@gmail.com,ORD-1004,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-27
+oceane.rousseau@gmail.com,ORD-1005,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-05-10
+florian.dupont@gmail.com,ORD-1006,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-05-06
+julie.dubois@gmail.com,ORD-1007,39.9,0.0,completed,Legging sport,LEG-009,2026-05-08
+pauline.mercier@outlook.com,ORD-1008,179.8,110.39,refunded,Sneakers blanches,SNEK-004,2026-05-17
+julie.dubois@gmail.com,ORD-1009,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-03
+marine.perrin@gmail.com,ORD-1010,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-03-26
+benjamin.fontaine@gmail.com,ORD-1011,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-23
+nicolas.simon@hotmail.fr,ORD-1012,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-13
+alexandre.michel@gmail.com,ORD-1013,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-19
+xavier.gauthier@hotmail.fr,ORD-1014,29.9,28.6,refunded,T-shirt coton bio,TSH-006,2026-04-12
+jessica.lambert@outlook.com,ORD-1015,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-02
+chloe.morel@gmail.com,ORD-1016,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-05-21
+anthony.henry@outlook.com,ORD-1017,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-06
+sarah.andre@gmail.com,ORD-1018,59.9,33.23,refunded,Chemise oxford,CHE-008,2026-04-04
+nicolas.simon@hotmail.fr,ORD-1019,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-08
+chloe.morel@gmail.com,ORD-1020,39.9,0.0,completed,Legging sport,LEG-009,2026-03-28
+anthony.henry@outlook.com,ORD-1021,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-02
+manon.bertrand@gmail.com,ORD-1022,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-21
+sarah.andre@gmail.com,ORD-1023,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-16
+marine.perrin@gmail.com,ORD-1024,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-03
+kevin.lefevre@gmail.com,ORD-1025,179.8,0.0,completed,Robe de soirée,ROB-013,2026-04-22
+sophie.martin@gmail.com,ORD-1026,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-05-15
+alexandre.michel@gmail.com,ORD-1027,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-04-22
+marine.perrin@gmail.com,ORD-1028,209.7,0.0,completed,Jean slim fit,JEAN-002,2026-03-31
+romain.girard@hotmail.fr,ORD-1029,39.9,0.0,completed,Legging sport,LEG-009,2026-05-27
+benjamin.fontaine@gmail.com,ORD-1030,79.8,0.0,completed,Legging sport,LEG-009,2026-05-03
+jeremy.guerin@yahoo.fr,ORD-1031,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-23
+alexandre.michel@gmail.com,ORD-1032,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-26
+sophie.martin@gmail.com,ORD-1033,139.8,74.61,refunded,Jean slim fit,JEAN-002,2026-06-19
+sebastien.colin@gmail.com,ORD-1034,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-05-27
+kevin.lefevre@gmail.com,ORD-1035,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-05-23
+xavier.gauthier@hotmail.fr,ORD-1036,119.8,0.0,completed,Chemise oxford,CHE-008,2026-04-29
+hugo.roux@yahoo.fr,ORD-1037,189.9,0.0,completed,Manteau laine,MAN-007,2026-04-01
+aurelie.blanc@gmail.com,ORD-1038,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-06-10
+alexandre.michel@gmail.com,ORD-1039,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-19
+chloe.morel@gmail.com,ORD-1040,179.8,162.54,refunded,Sneakers blanches,SNEK-004,2026-04-14
+pierre.moreau@yahoo.fr,ORD-1041,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-12
+benjamin.fontaine@gmail.com,ORD-1042,179.8,0.0,completed,Robe de soirée,ROB-013,2026-05-27
+sebastien.colin@gmail.com,ORD-1043,379.8,0.0,completed,Manteau laine,MAN-007,2026-05-05
+emma.garcia@outlook.com,ORD-1044,89.8,0.0,completed,Sandales été,SAN-015,2026-04-13
+jeremy.guerin@yahoo.fr,ORD-1045,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-16
+pauline.mercier@outlook.com,ORD-1046,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-10
+romain.girard@hotmail.fr,ORD-1047,79.8,0.0,completed,Legging sport,LEG-009,2026-04-19
+julie.dubois@gmail.com,ORD-1048,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-24
+lea.vincent@gmail.com,ORD-1049,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-06-18
+florian.dupont@gmail.com,ORD-1050,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-21
+camille.laurent@gmail.com,ORD-1051,199.8,0.0,completed,Pull cachemire,PULL-011,2026-03-30
+aurelie.blanc@gmail.com,ORD-1052,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-06-22
+chloe.morel@gmail.com,ORD-1053,359.7,0.0,completed,Boots cuir marron,BOOT-010,2026-05-27
+sarah.andre@gmail.com,ORD-1054,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-23
+hugo.roux@yahoo.fr,ORD-1055,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-06
+xavier.gauthier@hotmail.fr,ORD-1056,99.9,0.0,completed,Pull cachemire,PULL-011,2026-03-31
+pierre.moreau@yahoo.fr,ORD-1057,44.9,0.0,completed,Sandales été,SAN-015,2026-04-14
+marie.lefebvre@gmail.com,ORD-1058,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-03-28
+aurelie.blanc@gmail.com,ORD-1059,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-06-17
+julie.dubois@gmail.com,ORD-1060,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-07
+aurelie.blanc@gmail.com,ORD-1061,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-13
+sophie.martin@gmail.com,ORD-1062,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-15
+thomas.bernard@outlook.com,ORD-1063,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-06-18
+lucas.david@gmail.com,ORD-1064,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-05-09
+camille.laurent@gmail.com,ORD-1065,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-02
+florian.dupont@gmail.com,ORD-1066,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-01
+jessica.lambert@outlook.com,ORD-1067,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-02
+xavier.gauthier@hotmail.fr,ORD-1068,199.8,0.0,completed,Pull cachemire,PULL-011,2026-03-26
+pierre.moreau@yahoo.fr,ORD-1069,379.8,0.0,completed,Manteau laine,MAN-007,2026-04-26
+hugo.roux@yahoo.fr,ORD-1070,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-03-31
+camille.laurent@gmail.com,ORD-1071,189.9,0.0,cancelled,Manteau laine,MAN-007,2026-05-19
+hugo.roux@yahoo.fr,ORD-1072,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-12
+sophie.martin@gmail.com,ORD-1073,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-05-21
+thomas.bernard@outlook.com,ORD-1074,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-29
+florian.dupont@gmail.com,ORD-1075,39.9,0.0,completed,Legging sport,LEG-009,2026-06-18
+laura.muller@gmail.com,ORD-1076,189.9,0.0,completed,Manteau laine,MAN-007,2026-03-30
+camille.laurent@gmail.com,ORD-1077,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-05
+manon.bertrand@gmail.com,ORD-1078,199.8,0.0,completed,Pull cachemire,PULL-011,2026-05-15
+jeremy.guerin@yahoo.fr,ORD-1079,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-30
+mathieu.fournier@outlook.com,ORD-1080,199.8,0.0,completed,Pull cachemire,PULL-011,2026-04-06
+pauline.mercier@outlook.com,ORD-1081,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-28
+mathieu.fournier@outlook.com,ORD-1082,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-28
+jeremy.guerin@yahoo.fr,ORD-1083,89.9,0.0,cancelled,Sneakers blanches,SNEK-004,2026-06-02
+jeremy.guerin@yahoo.fr,ORD-1084,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-06-12
+marine.perrin@gmail.com,ORD-1085,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-05
+sophie.martin@gmail.com,ORD-1086,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-14
+chloe.morel@gmail.com,ORD-1087,379.8,0.0,completed,Manteau laine,MAN-007,2026-05-05
+romain.girard@hotmail.fr,ORD-1088,189.9,0.0,completed,Manteau laine,MAN-007,2026-06-10
+oceane.rousseau@gmail.com,ORD-1089,189.9,0.0,completed,Manteau laine,MAN-007,2026-04-25
+thomas.bernard@outlook.com,ORD-1090,39.9,0.0,completed,Legging sport,LEG-009,2026-04-25
+jeremy.guerin@yahoo.fr,ORD-1091,119.7,0.0,cancelled,Legging sport,LEG-009,2026-04-28
+florian.dupont@gmail.com,ORD-1092,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-04-14
+chloe.morel@gmail.com,ORD-1093,44.9,0.0,completed,Sandales été,SAN-015,2026-05-23
+marine.perrin@gmail.com,ORD-1094,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-24
+emma.garcia@outlook.com,ORD-1095,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-14
+jessica.lambert@outlook.com,ORD-1096,39.9,0.0,completed,Legging sport,LEG-009,2026-06-04
+laura.muller@gmail.com,ORD-1097,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-01
+thomas.bernard@outlook.com,ORD-1098,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-03-26
+sophie.martin@gmail.com,ORD-1099,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-05-09
+lucas.david@gmail.com,ORD-1100,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-16
+anthony.henry@outlook.com,ORD-1101,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-26
+emma.garcia@outlook.com,ORD-1102,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-03
+anthony.henry@outlook.com,ORD-1103,299.8,0.0,cancelled,Veste en cuir noir,VEST-003,2026-04-16
+sophie.martin@gmail.com,ORD-1104,44.9,0.0,completed,Sandales été,SAN-015,2026-04-02
+mathieu.fournier@outlook.com,ORD-1105,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-05-13
+camille.laurent@gmail.com,ORD-1106,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-01
+emma.garcia@outlook.com,ORD-1107,54.9,42.26,refunded,Sweat hoodie,SWE-014,2026-05-10
+alexandre.michel@gmail.com,ORD-1108,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-20
+alexandre.michel@gmail.com,ORD-1109,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-04-24
+jeremy.guerin@yahoo.fr,ORD-1110,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-07
+nicolas.simon@hotmail.fr,ORD-1111,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-03
+lucas.david@gmail.com,ORD-1112,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-06
+lea.vincent@gmail.com,ORD-1113,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-23
+pierre.moreau@yahoo.fr,ORD-1114,69.8,0.0,completed,Short bermuda,SHO-012,2026-06-08
+xavier.gauthier@hotmail.fr,ORD-1115,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-05-07
+julie.dubois@gmail.com,ORD-1116,39.9,28.33,refunded,Legging sport,LEG-009,2026-04-22
+pierre.moreau@yahoo.fr,ORD-1117,569.7,0.0,completed,Manteau laine,MAN-007,2026-06-04
+mathieu.fournier@outlook.com,ORD-1118,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-04-16
+oceane.rousseau@gmail.com,ORD-1119,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-13
+sebastien.colin@gmail.com,ORD-1120,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-05-23
+oceane.rousseau@gmail.com,ORD-1121,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-21
+sebastien.colin@gmail.com,ORD-1122,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-05-11
+emma.garcia@outlook.com,ORD-1123,44.9,0.0,completed,Sandales été,SAN-015,2026-04-18
+camille.laurent@gmail.com,ORD-1124,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-24
+laura.muller@gmail.com,ORD-1125,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-12
+lucas.david@gmail.com,ORD-1126,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-07
+romain.girard@hotmail.fr,ORD-1127,39.9,0.0,completed,Legging sport,LEG-009,2026-05-12
+hugo.roux@yahoo.fr,ORD-1128,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-30
+manon.bertrand@gmail.com,ORD-1129,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-05-30
+camille.laurent@gmail.com,ORD-1130,34.9,0.0,cancelled,Short bermuda,SHO-012,2026-04-17
+florian.dupont@gmail.com,ORD-1131,389.7,0.0,completed,Sac à main cuir,SAC-005,2026-05-08
+nicolas.simon@hotmail.fr,ORD-1132,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-06-17
+kevin.lefevre@gmail.com,ORD-1133,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-22
+pierre.moreau@yahoo.fr,ORD-1134,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-11
+nicolas.simon@hotmail.fr,ORD-1135,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-15
+lea.vincent@gmail.com,ORD-1136,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-04
+xavier.gauthier@hotmail.fr,ORD-1137,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-04-13
+oceane.rousseau@gmail.com,ORD-1138,189.9,0.0,completed,Manteau laine,MAN-007,2026-04-18
+lea.vincent@gmail.com,ORD-1139,119.8,0.0,completed,Chemise oxford,CHE-008,2026-04-30
+lucas.david@gmail.com,ORD-1140,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-05-28
+aurelie.blanc@gmail.com,ORD-1141,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-04-14
+julie.dubois@gmail.com,ORD-1142,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-05-17
+thomas.bernard@outlook.com,ORD-1143,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-06-14
+jeremy.guerin@yahoo.fr,ORD-1144,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-03-31
+xavier.gauthier@hotmail.fr,ORD-1145,44.9,0.0,completed,Sandales été,SAN-015,2026-06-04
+benjamin.fontaine@gmail.com,ORD-1146,259.8,151.45,refunded,Sac à main cuir,SAC-005,2026-05-15
+florian.dupont@gmail.com,ORD-1147,69.8,0.0,completed,Short bermuda,SHO-012,2026-04-25
+laura.muller@gmail.com,ORD-1148,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-21
+chloe.morel@gmail.com,ORD-1149,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-07
+emma.garcia@outlook.com,ORD-1150,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-04-11
+pauline.mercier@outlook.com,ORD-1151,149.7,0.0,completed,Robe fleurie été,ROB-001,2026-06-18
+oceane.rousseau@gmail.com,ORD-1152,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-19
+nicolas.simon@hotmail.fr,ORD-1153,119.9,0.0,cancelled,Boots cuir marron,BOOT-010,2026-04-24
+hugo.roux@yahoo.fr,ORD-1154,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-12
+mathieu.fournier@outlook.com,ORD-1155,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-14
+thomas.bernard@outlook.com,ORD-1156,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-03
+sebastien.colin@gmail.com,ORD-1157,79.8,74.59,refunded,Legging sport,LEG-009,2026-04-25
+mathieu.fournier@outlook.com,ORD-1158,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-04-04
+chloe.morel@gmail.com,ORD-1159,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-18
+chloe.morel@gmail.com,ORD-1160,44.9,0.0,cancelled,Sandales été,SAN-015,2026-04-07
+xavier.gauthier@hotmail.fr,ORD-1161,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-05-02
+julie.dubois@gmail.com,ORD-1162,269.7,0.0,completed,Sneakers blanches,SNEK-004,2026-06-08
+aurelie.blanc@gmail.com,ORD-1163,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-20
+mathieu.fournier@outlook.com,ORD-1164,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-06-05
+lea.vincent@gmail.com,ORD-1165,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-06-15
+emma.garcia@outlook.com,ORD-1166,179.8,0.0,completed,Robe de soirée,ROB-013,2026-04-20
+emma.garcia@outlook.com,ORD-1167,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-10
+jeremy.guerin@yahoo.fr,ORD-1168,119.8,0.0,completed,Chemise oxford,CHE-008,2026-05-12
+kevin.lefevre@gmail.com,ORD-1169,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-30
+laura.muller@gmail.com,ORD-1170,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-06-18
+manon.bertrand@gmail.com,ORD-1171,34.9,0.0,completed,Short bermuda,SHO-012,2026-03-31
+xavier.gauthier@hotmail.fr,ORD-1172,54.9,0.0,cancelled,Sweat hoodie,SWE-014,2026-06-07
+sarah.andre@gmail.com,ORD-1173,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-11
+sarah.andre@gmail.com,ORD-1174,44.9,0.0,completed,Sandales été,SAN-015,2026-04-01
+marie.lefebvre@gmail.com,ORD-1175,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-03-27
+lea.vincent@gmail.com,ORD-1176,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-16
+lea.vincent@gmail.com,ORD-1177,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-15
+thomas.bernard@outlook.com,ORD-1178,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-05-25
+anthony.henry@outlook.com,ORD-1179,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-06-11
+chloe.morel@gmail.com,ORD-1180,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-06-16
+lucas.david@gmail.com,ORD-1181,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-12
+jeremy.guerin@yahoo.fr,ORD-1182,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-06
+florian.dupont@gmail.com,ORD-1183,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-25
+aurelie.blanc@gmail.com,ORD-1184,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-25
+jessica.lambert@outlook.com,ORD-1185,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-10
+pauline.mercier@outlook.com,ORD-1186,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-16
+camille.laurent@gmail.com,ORD-1187,379.8,0.0,completed,Manteau laine,MAN-007,2026-05-09
+pauline.mercier@outlook.com,ORD-1188,389.7,0.0,cancelled,Sac à main cuir,SAC-005,2026-03-31
+lea.vincent@gmail.com,ORD-1189,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-06-17
+benjamin.fontaine@gmail.com,ORD-1190,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-05-25
+florian.dupont@gmail.com,ORD-1191,89.9,0.0,completed,Robe de soirée,ROB-013,2026-03-29
+oceane.rousseau@gmail.com,ORD-1192,69.8,0.0,completed,Short bermuda,SHO-012,2026-06-11
+jessica.lambert@outlook.com,ORD-1193,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-10
+hugo.roux@yahoo.fr,ORD-1194,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-01
+nicolas.simon@hotmail.fr,ORD-1195,89.9,0.0,cancelled,Sneakers blanches,SNEK-004,2026-04-17
+sarah.andre@gmail.com,ORD-1196,44.9,0.0,completed,Sandales été,SAN-015,2026-04-23
+xavier.gauthier@hotmail.fr,ORD-1197,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-06-14
+marie.lefebvre@gmail.com,ORD-1198,269.7,0.0,completed,Robe de soirée,ROB-013,2026-05-04
+sebastien.colin@gmail.com,ORD-1199,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-21
+kevin.lefevre@gmail.com,ORD-1200,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-10
+lea.vincent@gmail.com,ORD-1201,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-24
+sophie.martin@gmail.com,ORD-1202,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-05-26
+aurelie.blanc@gmail.com,ORD-1203,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-01
+mathieu.fournier@outlook.com,ORD-1204,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-21
+pierre.moreau@yahoo.fr,ORD-1205,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-07
+jeremy.guerin@yahoo.fr,ORD-1206,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-04
+jessica.lambert@outlook.com,ORD-1207,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-19
+thomas.bernard@outlook.com,ORD-1208,34.9,0.0,cancelled,Short bermuda,SHO-012,2026-05-08
+pierre.moreau@yahoo.fr,ORD-1209,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-16
+lea.vincent@gmail.com,ORD-1210,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-26
+julie.dubois@gmail.com,ORD-1211,99.9,0.0,cancelled,Pull cachemire,PULL-011,2026-06-17
+xavier.gauthier@hotmail.fr,ORD-1212,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-06-15
+marine.perrin@gmail.com,ORD-1213,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-25
+manon.bertrand@gmail.com,ORD-1214,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-05
+marie.lefebvre@gmail.com,ORD-1215,39.9,0.0,completed,Legging sport,LEG-009,2026-06-20
+marie.lefebvre@gmail.com,ORD-1216,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-21
+nicolas.simon@hotmail.fr,ORD-1217,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-06-15
+romain.girard@hotmail.fr,ORD-1218,119.8,0.0,completed,Chemise oxford,CHE-008,2026-04-20
+alexandre.michel@gmail.com,ORD-1219,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-18
+lucas.david@gmail.com,ORD-1220,59.9,59.86,refunded,Chemise oxford,CHE-008,2026-05-03
+mathieu.fournier@outlook.com,ORD-1221,99.9,0.0,completed,Pull cachemire,PULL-011,2026-06-13
+manon.bertrand@gmail.com,ORD-1222,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-10
+kevin.lefevre@gmail.com,ORD-1223,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-26
+sarah.andre@gmail.com,ORD-1224,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-01
+aurelie.blanc@gmail.com,ORD-1225,89.8,0.0,completed,Sandales été,SAN-015,2026-04-27
+jessica.lambert@outlook.com,ORD-1226,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-06-11
+manon.bertrand@gmail.com,ORD-1227,189.9,0.0,cancelled,Manteau laine,MAN-007,2026-03-28
+benjamin.fontaine@gmail.com,ORD-1228,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-11
+anthony.henry@outlook.com,ORD-1229,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-13
+kevin.lefevre@gmail.com,ORD-1230,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-30
+sebastien.colin@gmail.com,ORD-1231,89.8,0.0,completed,Sandales été,SAN-015,2026-05-09
+pierre.moreau@yahoo.fr,ORD-1232,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-10
+hugo.roux@yahoo.fr,ORD-1233,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-26
+xavier.gauthier@hotmail.fr,ORD-1234,379.8,0.0,completed,Manteau laine,MAN-007,2026-04-06
+jeremy.guerin@yahoo.fr,ORD-1235,99.9,0.0,completed,Pull cachemire,PULL-011,2026-03-27
+emma.garcia@outlook.com,ORD-1236,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-05-11
+hugo.roux@yahoo.fr,ORD-1237,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-15
+marie.lefebvre@gmail.com,ORD-1238,34.9,30.47,refunded,Short bermuda,SHO-012,2026-05-27
+lea.vincent@gmail.com,ORD-1239,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-13
+oceane.rousseau@gmail.com,ORD-1240,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-05
+thomas.bernard@outlook.com,ORD-1241,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-07
+chloe.morel@gmail.com,ORD-1242,189.9,0.0,completed,Manteau laine,MAN-007,2026-04-29
+pierre.moreau@yahoo.fr,ORD-1243,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-15
+thomas.bernard@outlook.com,ORD-1244,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-16
+camille.laurent@gmail.com,ORD-1245,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-23
+romain.girard@hotmail.fr,ORD-1246,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-25
+sarah.andre@gmail.com,ORD-1247,79.8,0.0,completed,Legging sport,LEG-009,2026-06-18
+mathieu.fournier@outlook.com,ORD-1248,49.9,32.76,refunded,Robe fleurie été,ROB-001,2026-04-30
+pauline.mercier@outlook.com,ORD-1249,379.8,0.0,completed,Manteau laine,MAN-007,2026-06-21
+manon.bertrand@gmail.com,ORD-1250,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-05-08
+julie.dubois@gmail.com,ORD-1251,379.8,0.0,completed,Manteau laine,MAN-007,2026-04-17
+julie.dubois@gmail.com,ORD-1252,379.8,0.0,completed,Manteau laine,MAN-007,2026-06-02
+julie.dubois@gmail.com,ORD-1253,39.9,0.0,completed,Legging sport,LEG-009,2026-05-10
+hugo.roux@yahoo.fr,ORD-1254,104.7,0.0,completed,Short bermuda,SHO-012,2026-06-10
+marie.lefebvre@gmail.com,ORD-1255,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-01
+julie.dubois@gmail.com,ORD-1256,449.7,0.0,completed,Veste en cuir noir,VEST-003,2026-04-12
+oceane.rousseau@gmail.com,ORD-1257,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-03
+florian.dupont@gmail.com,ORD-1258,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-06-15
+romain.girard@hotmail.fr,ORD-1259,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-09
+sarah.andre@gmail.com,ORD-1260,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-18
+julie.dubois@gmail.com,ORD-1261,199.8,0.0,completed,Pull cachemire,PULL-011,2026-04-20
+lea.vincent@gmail.com,ORD-1262,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-18
+chloe.morel@gmail.com,ORD-1263,89.8,0.0,completed,Sandales été,SAN-015,2026-04-24
+sarah.andre@gmail.com,ORD-1264,449.7,0.0,completed,Veste en cuir noir,VEST-003,2026-05-11
+laura.muller@gmail.com,ORD-1265,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-28
+chloe.morel@gmail.com,ORD-1266,39.9,0.0,completed,Legging sport,LEG-009,2026-05-18
+lea.vincent@gmail.com,ORD-1267,379.8,0.0,completed,Manteau laine,MAN-007,2026-04-04
+aurelie.blanc@gmail.com,ORD-1268,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-05-18
+emma.garcia@outlook.com,ORD-1269,69.8,0.0,completed,Short bermuda,SHO-012,2026-06-04
+manon.bertrand@gmail.com,ORD-1270,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-01
+laura.muller@gmail.com,ORD-1271,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-15
+kevin.lefevre@gmail.com,ORD-1272,189.9,0.0,completed,Manteau laine,MAN-007,2026-03-26
+marine.perrin@gmail.com,ORD-1273,104.7,0.0,completed,Short bermuda,SHO-012,2026-03-30
+mathieu.fournier@outlook.com,ORD-1274,39.9,0.0,completed,Legging sport,LEG-009,2026-05-27
+manon.bertrand@gmail.com,ORD-1275,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-14
+lucas.david@gmail.com,ORD-1276,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-04-17
+thomas.bernard@outlook.com,ORD-1277,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-06
+marie.lefebvre@gmail.com,ORD-1278,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-06-02
+anthony.henry@outlook.com,ORD-1279,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-28
+florian.dupont@gmail.com,ORD-1280,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-05-24
+lucas.david@gmail.com,ORD-1281,179.8,0.0,completed,Robe de soirée,ROB-013,2026-03-29
+pauline.mercier@outlook.com,ORD-1282,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-17
+mathieu.fournier@outlook.com,ORD-1283,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-05-22
+thomas.bernard@outlook.com,ORD-1284,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-18
+sebastien.colin@gmail.com,ORD-1285,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-19
+marie.lefebvre@gmail.com,ORD-1286,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-27
+jessica.lambert@outlook.com,ORD-1287,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-05-07
+alexandre.michel@gmail.com,ORD-1288,569.7,0.0,completed,Manteau laine,MAN-007,2026-06-11
+marine.perrin@gmail.com,ORD-1289,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-18
+benjamin.fontaine@gmail.com,ORD-1290,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-24
+chloe.morel@gmail.com,ORD-1291,119.9,75.29,refunded,Boots cuir marron,BOOT-010,2026-06-04
+kevin.lefevre@gmail.com,ORD-1292,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-24
+lucas.david@gmail.com,ORD-1293,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-26
+julie.dubois@gmail.com,ORD-1294,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-04-04
+sarah.andre@gmail.com,ORD-1295,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-06
+hugo.roux@yahoo.fr,ORD-1296,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-04-17
+hugo.roux@yahoo.fr,ORD-1297,209.7,0.0,completed,Jean slim fit,JEAN-002,2026-04-20
+kevin.lefevre@gmail.com,ORD-1298,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-05-07
+emma.garcia@outlook.com,ORD-1299,34.9,0.0,completed,Short bermuda,SHO-012,2026-03-31
+aurelie.blanc@gmail.com,ORD-1300,139.8,0.0,completed,Jean slim fit,JEAN-002,2026-06-18
+hugo.roux@yahoo.fr,ORD-1301,39.9,0.0,completed,Legging sport,LEG-009,2026-03-28
+chloe.morel@gmail.com,ORD-1302,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-26
+thomas.bernard@outlook.com,ORD-1303,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-14
+benjamin.fontaine@gmail.com,ORD-1304,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-22
+thomas.bernard@outlook.com,ORD-1305,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-17
+sebastien.colin@gmail.com,ORD-1306,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-03
+anthony.henry@outlook.com,ORD-1307,119.8,0.0,cancelled,Chemise oxford,CHE-008,2026-04-21
+laura.muller@gmail.com,ORD-1308,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-13
+anthony.henry@outlook.com,ORD-1309,189.9,0.0,completed,Manteau laine,MAN-007,2026-04-15
+lucas.david@gmail.com,ORD-1310,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-27
+florian.dupont@gmail.com,ORD-1311,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-18
+anthony.henry@outlook.com,ORD-1312,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-04-03
+xavier.gauthier@hotmail.fr,ORD-1313,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-03-29
+nicolas.simon@hotmail.fr,ORD-1314,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-19
+marie.lefebvre@gmail.com,ORD-1315,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-12
+thomas.bernard@outlook.com,ORD-1316,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-28
+oceane.rousseau@gmail.com,ORD-1317,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-01
+emma.garcia@outlook.com,ORD-1318,269.7,159.94,refunded,Sneakers blanches,SNEK-004,2026-04-18
+lea.vincent@gmail.com,ORD-1319,44.9,0.0,completed,Sandales été,SAN-015,2026-04-27
+camille.laurent@gmail.com,ORD-1320,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-08
+marie.lefebvre@gmail.com,ORD-1321,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-06-12
+xavier.gauthier@hotmail.fr,ORD-1322,299.7,0.0,completed,Pull cachemire,PULL-011,2026-06-15
+kevin.lefevre@gmail.com,ORD-1323,39.9,0.0,completed,Legging sport,LEG-009,2026-03-26
+aurelie.blanc@gmail.com,ORD-1324,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-05-29
+xavier.gauthier@hotmail.fr,ORD-1325,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-11
+hugo.roux@yahoo.fr,ORD-1326,119.8,0.0,completed,Chemise oxford,CHE-008,2026-06-12
+julie.dubois@gmail.com,ORD-1327,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-02
+oceane.rousseau@gmail.com,ORD-1328,379.8,374.55,refunded,Manteau laine,MAN-007,2026-04-02
+julie.dubois@gmail.com,ORD-1329,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-14
+aurelie.blanc@gmail.com,ORD-1330,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-16
+marine.perrin@gmail.com,ORD-1331,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-26
+hugo.roux@yahoo.fr,ORD-1332,79.8,0.0,completed,Legging sport,LEG-009,2026-04-03
+kevin.lefevre@gmail.com,ORD-1333,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-20
+aurelie.blanc@gmail.com,ORD-1334,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-05
+anthony.henry@outlook.com,ORD-1335,44.9,0.0,completed,Sandales été,SAN-015,2026-06-20
+julie.dubois@gmail.com,ORD-1336,99.8,0.0,completed,Robe fleurie été,ROB-001,2026-05-28
+oceane.rousseau@gmail.com,ORD-1337,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-04-04
+kevin.lefevre@gmail.com,ORD-1338,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-03-28
+lea.vincent@gmail.com,ORD-1339,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-01
+romain.girard@hotmail.fr,ORD-1340,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-14
+anthony.henry@outlook.com,ORD-1341,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-19
+kevin.lefevre@gmail.com,ORD-1342,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-23
+marie.lefebvre@gmail.com,ORD-1343,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-01
+alexandre.michel@gmail.com,ORD-1344,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-05-14
+camille.laurent@gmail.com,ORD-1345,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-15
+romain.girard@hotmail.fr,ORD-1346,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-05-24
+camille.laurent@gmail.com,ORD-1347,119.9,89.62,refunded,Boots cuir marron,BOOT-010,2026-04-01
+jeremy.guerin@yahoo.fr,ORD-1348,59.9,33.17,refunded,Chemise oxford,CHE-008,2026-06-06
+jessica.lambert@outlook.com,ORD-1349,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-05-03
+thomas.bernard@outlook.com,ORD-1350,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-05-05
+sarah.andre@gmail.com,ORD-1351,119.8,0.0,cancelled,Chemise oxford,CHE-008,2026-03-28
+florian.dupont@gmail.com,ORD-1352,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-11
+kevin.lefevre@gmail.com,ORD-1353,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-04-20
+thomas.bernard@outlook.com,ORD-1354,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-04-18
+chloe.morel@gmail.com,ORD-1355,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-06
+manon.bertrand@gmail.com,ORD-1356,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-09
+manon.bertrand@gmail.com,ORD-1357,79.8,0.0,completed,Legging sport,LEG-009,2026-05-16
+romain.girard@hotmail.fr,ORD-1358,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-01
+pauline.mercier@outlook.com,ORD-1359,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-06-20
+florian.dupont@gmail.com,ORD-1360,59.9,0.0,cancelled,Chemise oxford,CHE-008,2026-04-10
+pauline.mercier@outlook.com,ORD-1361,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-04-04
+anthony.henry@outlook.com,ORD-1362,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-05-23
+thomas.bernard@outlook.com,ORD-1363,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-05-14
+mathieu.fournier@outlook.com,ORD-1364,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-06
+benjamin.fontaine@gmail.com,ORD-1365,119.8,0.0,completed,Chemise oxford,CHE-008,2026-06-06
+sarah.andre@gmail.com,ORD-1366,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-06
+manon.bertrand@gmail.com,ORD-1367,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-03-29
+oceane.rousseau@gmail.com,ORD-1368,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-04-06
+romain.girard@hotmail.fr,ORD-1369,269.7,0.0,completed,Sneakers blanches,SNEK-004,2026-05-16
+oceane.rousseau@gmail.com,ORD-1370,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-04-23
+hugo.roux@yahoo.fr,ORD-1371,79.8,0.0,completed,Legging sport,LEG-009,2026-06-08
+pauline.mercier@outlook.com,ORD-1372,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-10
+oceane.rousseau@gmail.com,ORD-1373,89.9,87.89,refunded,Robe de soirée,ROB-013,2026-06-13
+hugo.roux@yahoo.fr,ORD-1374,44.9,0.0,completed,Sandales été,SAN-015,2026-05-29
+marine.perrin@gmail.com,ORD-1375,39.9,0.0,completed,Legging sport,LEG-009,2026-06-10
+florian.dupont@gmail.com,ORD-1376,34.9,0.0,completed,Short bermuda,SHO-012,2026-04-17
+alexandre.michel@gmail.com,ORD-1377,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-24
+pierre.moreau@yahoo.fr,ORD-1378,199.8,154.88,refunded,Pull cachemire,PULL-011,2026-06-03
+mathieu.fournier@outlook.com,ORD-1379,199.8,0.0,completed,Pull cachemire,PULL-011,2026-05-29
+oceane.rousseau@gmail.com,ORD-1380,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-06-12
+aurelie.blanc@gmail.com,ORD-1381,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-19
+benjamin.fontaine@gmail.com,ORD-1382,44.9,0.0,completed,Sandales été,SAN-015,2026-06-19
+marine.perrin@gmail.com,ORD-1383,379.8,0.0,completed,Manteau laine,MAN-007,2026-05-17
+jessica.lambert@outlook.com,ORD-1384,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-05-12
+lucas.david@gmail.com,ORD-1385,179.7,0.0,completed,Chemise oxford,CHE-008,2026-06-06
+sebastien.colin@gmail.com,ORD-1386,39.9,0.0,completed,Legging sport,LEG-009,2026-06-03
+anthony.henry@outlook.com,ORD-1387,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-11
+xavier.gauthier@hotmail.fr,ORD-1388,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-03
+jessica.lambert@outlook.com,ORD-1389,379.8,0.0,completed,Manteau laine,MAN-007,2026-03-30
+pierre.moreau@yahoo.fr,ORD-1390,449.7,0.0,completed,Veste en cuir noir,VEST-003,2026-06-23
+emma.garcia@outlook.com,ORD-1391,189.9,0.0,cancelled,Manteau laine,MAN-007,2026-05-16
+pauline.mercier@outlook.com,ORD-1392,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-24
+thomas.bernard@outlook.com,ORD-1393,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-20
+benjamin.fontaine@gmail.com,ORD-1394,89.8,0.0,completed,Sandales été,SAN-015,2026-04-03
+benjamin.fontaine@gmail.com,ORD-1395,129.9,0.0,cancelled,Sac à main cuir,SAC-005,2026-04-23
+marie.lefebvre@gmail.com,ORD-1396,119.8,0.0,completed,Chemise oxford,CHE-008,2026-04-14
+benjamin.fontaine@gmail.com,ORD-1397,119.8,0.0,completed,Chemise oxford,CHE-008,2026-05-23
+jeremy.guerin@yahoo.fr,ORD-1398,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-17
+laura.muller@gmail.com,ORD-1399,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-14
+jessica.lambert@outlook.com,ORD-1400,39.9,0.0,completed,Legging sport,LEG-009,2026-04-18
+chloe.morel@gmail.com,ORD-1401,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-19
+chloe.morel@gmail.com,ORD-1402,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-12
+thomas.bernard@outlook.com,ORD-1403,39.9,0.0,completed,Legging sport,LEG-009,2026-05-04
+emma.garcia@outlook.com,ORD-1404,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-30
+hugo.roux@yahoo.fr,ORD-1405,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-15
+benjamin.fontaine@gmail.com,ORD-1406,59.9,0.0,completed,Chemise oxford,CHE-008,2026-04-02
+anthony.henry@outlook.com,ORD-1407,299.7,0.0,completed,Pull cachemire,PULL-011,2026-04-27
+sebastien.colin@gmail.com,ORD-1408,89.8,0.0,completed,Sandales été,SAN-015,2026-03-31
+sebastien.colin@gmail.com,ORD-1409,39.9,0.0,completed,Legging sport,LEG-009,2026-04-16
+lea.vincent@gmail.com,ORD-1410,39.9,0.0,completed,Legging sport,LEG-009,2026-06-21
+lucas.david@gmail.com,ORD-1411,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-25
+alexandre.michel@gmail.com,ORD-1412,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-09
+thomas.bernard@outlook.com,ORD-1413,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-21
+alexandre.michel@gmail.com,ORD-1414,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-03-29
+laura.muller@gmail.com,ORD-1415,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-25
+kevin.lefevre@gmail.com,ORD-1416,179.8,0.0,completed,Sneakers blanches,SNEK-004,2026-05-17
+alexandre.michel@gmail.com,ORD-1417,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-03-29
+marine.perrin@gmail.com,ORD-1418,29.9,0.0,cancelled,T-shirt coton bio,TSH-006,2026-04-18
+alexandre.michel@gmail.com,ORD-1419,189.9,185.01,refunded,Manteau laine,MAN-007,2026-06-01
+aurelie.blanc@gmail.com,ORD-1420,99.9,0.0,cancelled,Pull cachemire,PULL-011,2026-04-02
+jeremy.guerin@yahoo.fr,ORD-1421,379.8,0.0,completed,Manteau laine,MAN-007,2026-06-04
+lucas.david@gmail.com,ORD-1422,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-26
+lucas.david@gmail.com,ORD-1423,109.8,0.0,completed,Sweat hoodie,SWE-014,2026-04-13
+mathieu.fournier@outlook.com,ORD-1424,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-28
+manon.bertrand@gmail.com,ORD-1425,99.9,0.0,completed,Pull cachemire,PULL-011,2026-04-16
+anthony.henry@outlook.com,ORD-1426,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-07
+thomas.bernard@outlook.com,ORD-1427,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-03-30
+kevin.lefevre@gmail.com,ORD-1428,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-06-22
+camille.laurent@gmail.com,ORD-1429,44.9,0.0,completed,Sandales été,SAN-015,2026-04-23
+benjamin.fontaine@gmail.com,ORD-1430,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-24
+kevin.lefevre@gmail.com,ORD-1431,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-05-09
+lucas.david@gmail.com,ORD-1432,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-04-24
+oceane.rousseau@gmail.com,ORD-1433,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-06-18
+pauline.mercier@outlook.com,ORD-1434,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-10
+pauline.mercier@outlook.com,ORD-1435,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-06
+pauline.mercier@outlook.com,ORD-1436,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-11
+emma.garcia@outlook.com,ORD-1437,179.8,0.0,completed,Robe de soirée,ROB-013,2026-04-22
+chloe.morel@gmail.com,ORD-1438,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-04-15
+romain.girard@hotmail.fr,ORD-1439,299.8,0.0,completed,Veste en cuir noir,VEST-003,2026-06-16
+sarah.andre@gmail.com,ORD-1440,99.8,90.72,refunded,Robe fleurie été,ROB-001,2026-06-17
+oceane.rousseau@gmail.com,ORD-1441,49.9,0.0,completed,Robe fleurie été,ROB-001,2026-06-04
+sophie.martin@gmail.com,ORD-1442,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-03-30
+benjamin.fontaine@gmail.com,ORD-1443,239.8,0.0,completed,Boots cuir marron,BOOT-010,2026-04-16
+kevin.lefevre@gmail.com,ORD-1444,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-18
+sophie.martin@gmail.com,ORD-1445,79.8,0.0,completed,Legging sport,LEG-009,2026-06-01
+pierre.moreau@yahoo.fr,ORD-1446,44.9,0.0,completed,Sandales été,SAN-015,2026-04-17
+emma.garcia@outlook.com,ORD-1447,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-05-03
+chloe.morel@gmail.com,ORD-1448,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-13
+aurelie.blanc@gmail.com,ORD-1449,54.9,38.57,refunded,Sweat hoodie,SWE-014,2026-05-06
+kevin.lefevre@gmail.com,ORD-1450,59.9,35.08,refunded,Chemise oxford,CHE-008,2026-04-21
+sebastien.colin@gmail.com,ORD-1451,189.9,0.0,cancelled,Manteau laine,MAN-007,2026-06-11
+jessica.lambert@outlook.com,ORD-1452,79.8,0.0,completed,Legging sport,LEG-009,2026-03-27
+jessica.lambert@outlook.com,ORD-1453,119.9,64.41,refunded,Boots cuir marron,BOOT-010,2026-05-19
+jessica.lambert@outlook.com,ORD-1454,39.9,38.48,refunded,Legging sport,LEG-009,2026-05-14
+sophie.martin@gmail.com,ORD-1455,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-04
+benjamin.fontaine@gmail.com,ORD-1456,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-05
+jeremy.guerin@yahoo.fr,ORD-1457,44.9,0.0,completed,Sandales été,SAN-015,2026-03-27
+anthony.henry@outlook.com,ORD-1458,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-29
+alexandre.michel@gmail.com,ORD-1459,54.9,0.0,completed,Sweat hoodie,SWE-014,2026-04-08
+lea.vincent@gmail.com,ORD-1460,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-27
+romain.girard@hotmail.fr,ORD-1461,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-03-28
+pauline.mercier@outlook.com,ORD-1462,99.9,0.0,completed,Pull cachemire,PULL-011,2026-05-23
+laura.muller@gmail.com,ORD-1463,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-03
+marie.lefebvre@gmail.com,ORD-1464,34.9,0.0,completed,Short bermuda,SHO-012,2026-05-15
+chloe.morel@gmail.com,ORD-1465,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-04-29
+chloe.morel@gmail.com,ORD-1466,39.9,0.0,completed,Legging sport,LEG-009,2026-05-09
+kevin.lefevre@gmail.com,ORD-1467,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-06-22
+lucas.david@gmail.com,ORD-1468,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-23
+pauline.mercier@outlook.com,ORD-1469,39.9,0.0,completed,Legging sport,LEG-009,2026-05-16
+emma.garcia@outlook.com,ORD-1470,59.9,0.0,completed,Chemise oxford,CHE-008,2026-05-16
+romain.girard@hotmail.fr,ORD-1471,89.9,0.0,completed,Robe de soirée,ROB-013,2026-04-04
+romain.girard@hotmail.fr,ORD-1472,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-06-23
+lea.vincent@gmail.com,ORD-1473,59.8,0.0,completed,T-shirt coton bio,TSH-006,2026-04-28
+manon.bertrand@gmail.com,ORD-1474,379.8,0.0,cancelled,Manteau laine,MAN-007,2026-06-06
+lucas.david@gmail.com,ORD-1475,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-06-01
+lea.vincent@gmail.com,ORD-1476,29.9,0.0,completed,T-shirt coton bio,TSH-006,2026-04-11
+xavier.gauthier@hotmail.fr,ORD-1477,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-08
+pierre.moreau@yahoo.fr,ORD-1478,44.9,0.0,completed,Sandales été,SAN-015,2026-03-28
+oceane.rousseau@gmail.com,ORD-1479,39.9,0.0,completed,Legging sport,LEG-009,2026-05-28
+chloe.morel@gmail.com,ORD-1480,89.9,0.0,completed,Robe de soirée,ROB-013,2026-05-02
+jeremy.guerin@yahoo.fr,ORD-1481,59.9,0.0,completed,Chemise oxford,CHE-008,2026-06-04
+laura.muller@gmail.com,ORD-1482,379.8,378.03,refunded,Manteau laine,MAN-007,2026-04-23
+pauline.mercier@outlook.com,ORD-1483,189.9,0.0,completed,Manteau laine,MAN-007,2026-05-01
+kevin.lefevre@gmail.com,ORD-1484,99.8,0.0,completed,Robe fleurie été,ROB-001,2026-04-16
+florian.dupont@gmail.com,ORD-1485,199.8,0.0,completed,Pull cachemire,PULL-011,2026-03-30
+hugo.roux@yahoo.fr,ORD-1486,149.9,148.67,refunded,Veste en cuir noir,VEST-003,2026-03-29
+aurelie.blanc@gmail.com,ORD-1487,569.7,0.0,completed,Manteau laine,MAN-007,2026-06-10
+sophie.martin@gmail.com,ORD-1488,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-04-10
+laura.muller@gmail.com,ORD-1489,119.9,0.0,completed,Boots cuir marron,BOOT-010,2026-03-29
+pauline.mercier@outlook.com,ORD-1490,34.9,0.0,completed,Short bermuda,SHO-012,2026-06-10
+lucas.david@gmail.com,ORD-1491,379.8,0.0,completed,Manteau laine,MAN-007,2026-06-05
+hugo.roux@yahoo.fr,ORD-1492,129.9,0.0,completed,Sac à main cuir,SAC-005,2026-05-10
+romain.girard@hotmail.fr,ORD-1493,69.9,0.0,completed,Jean slim fit,JEAN-002,2026-05-16
+thomas.bernard@outlook.com,ORD-1494,179.8,120.74,refunded,Robe de soirée,ROB-013,2026-06-10
+jeremy.guerin@yahoo.fr,ORD-1495,89.9,0.0,completed,Robe de soirée,ROB-013,2026-06-01
+kevin.lefevre@gmail.com,ORD-1496,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-05-03
+aurelie.blanc@gmail.com,ORD-1497,149.9,0.0,completed,Veste en cuir noir,VEST-003,2026-04-06
+jessica.lambert@outlook.com,ORD-1498,89.9,0.0,completed,Sneakers blanches,SNEK-004,2026-05-27
+camille.laurent@gmail.com,ORD-1499,259.8,0.0,completed,Sac à main cuir,SAC-005,2026-06-10
