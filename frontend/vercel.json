@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://cfri-production.up.railway.app/:path*"
+    },
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
     }
   ]
 }
