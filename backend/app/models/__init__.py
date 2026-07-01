@@ -155,6 +155,7 @@ class Feedback(Base):
     customer = relationship("Customer", back_populates="feedbacks")
     import_source = relationship("Import", back_populates="feedbacks")
     analysis = relationship("FeedbackAnalysis", back_populates="feedback", uselist=False)
+    content_hash = Column(String(32), nullable=True, index=True)
 
 
 class FeedbackAnalysis(Base):
