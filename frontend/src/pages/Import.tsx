@@ -199,9 +199,7 @@ export default function ImportPage() {
       }
       setFeedbackPreview(null)
       setFeedbackFile(null)
-      setTimeout(() => { 
-        refetchImports() 
-        window.location.reload()}, 1000)
+      setTimeout(() => refetchImports(), 500)
     },
     onError: () => addLog('❌ Erreur lors de l\'import des feedbacks'),
   })

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
+from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, Form
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.schemas.import_schema import ImportResponse, ImportListResponse
@@ -130,7 +130,7 @@ async def preview_import(
 @router.post("/feedbacks/with-mapping")
 async def upload_feedbacks_with_mapping(
     file: UploadFile = File(...),
-    mapping: str = None,
+    mapping: str = Form(None),
     db: Session = Depends(get_db),
     current_user: dict = Depends(get_current_user),
 ):
