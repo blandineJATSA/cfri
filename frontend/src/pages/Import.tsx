@@ -238,19 +238,24 @@ export default function ImportPage() {
       addLog('🔄 Analyse en arrière-plan...')
       const jobId = data.job_id
       if (jobId) {
-        const pollStatus = async () => {
-          const status = await apiClient.getJobStatus(jobId)
-          if (status.status === 'finished') {
-            addLog(`✅ ${status.result?.success ?? 20} feedbacks analysés`)
-            setTimeout(() => analysisMutation.mutate(), 2000)
-          } else if (status.status === 'failed') {
-            addLog('❌ Erreur — nouvelle tentative dans 5s...')
-            setTimeout(() => analysisMutation.mutate(), 5000)
-          } else {
-            setTimeout(pollStatus, 3000)
-          }
-        }
-        setTimeout(pollStatus, 3000)
+        const pollStatus = async (attempts = 0) => {
+  if (attempts > 20) {
+    addLog('⏱️ Analyse en cours en arrière-plan — consultez le dashboard plus tard')
+    return
+  }
+  const status = await apiClient.getJobStatus(jobId)
+    if (status.status === 'finished') {
+      addLog(`✅ ${status.result?.success ?? 20} feedbacks analysés`)
+      setTimeout(() => analysisMutation.mutate(), 2000)
+    } else if (status.status === 'failed') {
+      addLog('❌ Erreur — nouvelle tentative dans 5s...')
+      setTimeout(() => analysisMutation.mutate(), 5000)
+    } else {
+      setTimeout(() => pollStatus(attempts + 1), 3000)
+    }
+  }
+  setTimeout(() => pollStatus(0), 3000)
+        
       }
     },
     onError: () => {
