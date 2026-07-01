@@ -72,6 +72,33 @@ export interface ImportRecord {
   completed_at: string | null
 }
 
+export interface ColumnMapping {
+  email: string | null
+  body: string | null
+  subject: string | null
+  rating: string | null
+  channel: string | null
+  feedback_date: string | null
+}
+
+export interface OrderColumnMapping {
+  email: string | null
+  total_amount: string | null
+  order_date: string | null
+  refund_amount: string | null
+  status: string | null
+  product_name: string | null
+  order_id: string | null
+}
+
+export interface PreviewResult {
+  columns: string[]
+  mapping: ColumnMapping | OrderColumnMapping
+  preview_rows: Record<string, string>[]
+  missing_required: string[]
+  can_import: boolean
+}
+
 // ── Fonctions API ──────────────────────────────────────
 
 export const apiClient = {
@@ -111,4 +138,35 @@ export const apiClient = {
 
   getJobStatus: (jobId: string) =>
     api.get(`/analysis/job/${jobId}`).then(r => r.data),
+
+  previewFeedbacks: (file: File) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    return api.post<PreviewResult>('/imports/preview/feedbacks', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(r => r.data)
+  },
+
+  previewOrders: (file: File) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    return api.post<PreviewResult>('/imports/preview/orders', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(r => r.data)
+  },
+
+  uploadFeedbacksWithMapping: (file: File, mapping: ColumnMapping) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('mapping', JSON.stringify(mapping))
+    return api.post<ImportRecord>('/imports/feedbacks/with-mapping', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(r => r.data)
+  },
+
+  deleteImport: (importId: string) =>
+    api.delete(`/imports/${importId}`).then(r => r.data),
+
+  getImports: () =>
+    api.get<ImportRecord[]>('/imports').then(r => r.data),
 }
