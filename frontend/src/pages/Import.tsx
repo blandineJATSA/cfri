@@ -9,7 +9,7 @@ import { Upload, FileText, Brain, TrendingUp, CheckCircle } from 'lucide-react'
 export default function ImportPage() {
   const [feedbackFile, setFeedbackFile] = useState<File | null>(null)
   const [orderFile, setOrderFile] = useState<File | null>(null)
-  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('imported')
+  const [step, setStep] = useState<'idle' | 'imported' | 'analyzed' | 'scored'>('idle')
   const [log, setLog] = useState<string[]>([])
 
   const addLog = (msg: string) => setLog(prev => [...prev, msg])
@@ -98,7 +98,7 @@ export default function ImportPage() {
   const { data: analysisStatus } = useQuery({
     queryKey: ['analysis-status'],
     queryFn: apiClient.getAnalysisStatus,
-    refetchInterval: step === 'imported' ? 3000 : false,
+    refetchInterval: (step === 'imported' && analysisMutation.isPending) ? 3000 : false,
   })
 
 
