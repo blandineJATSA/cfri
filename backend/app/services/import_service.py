@@ -59,19 +59,19 @@ def create_import_record(
     return import_record
 
 
-def process_feedbacks_csv(db: Session, import_record: Import, organization_id: str):
-    """
-    Parse le CSV de feedbacks et crée les enregistrements en base.
-    Déduplique automatiquement — un feedback identique n'est jamais importé deux fois.
+def get_field(row, field: str, mapping: dict = None) -> str:
+    """Récupère la valeur d'un champ en tenant compte du mapping."""
+    if mapping and mapping.get(field):
+        return str(row.get(mapping[field], ""))
+    return str(row.get(field, ""))
 
-    Colonnes attendues :
-    - email        : email du client (obligatoire)
-    - body         : texte du feedback (obligatoire)
-    - subject      : sujet (optionnel)
-    - rating       : note (optionnel)
-    - channel      : canal source (optionnel)
-    - feedback_date: date du feedback (optionnel)
-    """
+
+def process_feedbacks_csv(
+    db: Session,
+    import_record: Import,
+    organization_id: str,
+    column_mapping: dict = None,
+):
     try:
         import_record.status = ImportStatus.processing
         db.commit()
@@ -81,22 +81,22 @@ def process_feedbacks_csv(db: Session, import_record: Import, organization_id: s
         db.commit()
 
         rows_processed = 0
-        rows_skipped = 0  # doublons ignorés
+        rows_skipped = 0
 
         for _, row in df.iterrows():
             try:
-                email = str(row.get("email", "")).strip().lower()
-                body = str(row.get("body", "")).strip()
+                email = get_field(row, "email", column_mapping).strip().lower()
+                body = get_field(row, "body", column_mapping).strip()
 
                 # Ignorer les feedbacks sans texte
                 if not body or body == "nan":
                     continue
 
-                # Ignorer les feedbacks trop courts (moins de 5 mots)
+                # Ignorer les feedbacks trop courts
                 if len(body.split()) < 5:
                     continue
 
-                # Déduplication — vérifier si ce feedback existe déjà
+                # Déduplication
                 feedback_hash = make_feedback_hash(email or "", body)
                 existing = db.query(Feedback).filter(
                     Feedback.organization_id == organization_id,
@@ -105,7 +105,7 @@ def process_feedbacks_csv(db: Session, import_record: Import, organization_id: s
 
                 if existing:
                     rows_skipped += 1
-                    continue  # Doublon — on skip silencieusement
+                    continue
 
                 # Récupérer ou créer le client
                 customer = None
@@ -119,10 +119,27 @@ def process_feedbacks_csv(db: Session, import_record: Import, organization_id: s
                         customer = Customer(
                             organization_id=organization_id,
                             email=email,
-                            name=str(row.get("name", "")).strip() or None,
+                            name=get_field(row, "name", column_mapping).strip() or None,
                         )
                         db.add(customer)
                         db.flush()
+
+                # Récupérer les champs optionnels avec mapping
+                subject = get_field(row, "subject", column_mapping).strip() or None
+                if subject == "nan":
+                    subject = None
+
+                channel = get_field(row, "channel", column_mapping).strip() or None
+                if channel == "nan":
+                    channel = None
+
+                # Rating — champ numérique
+                raw_rating = row.get(column_mapping.get("rating") if column_mapping else "rating")
+                rating = float(raw_rating) if pd.notna(raw_rating) else None
+
+                # Date — champ datetime
+                raw_date = row.get(column_mapping.get("feedback_date") if column_mapping else "feedback_date")
+                feedback_date = pd.to_datetime(raw_date) if pd.notna(raw_date) else None
 
                 # Créer le feedback
                 feedback = Feedback(
@@ -131,10 +148,10 @@ def process_feedbacks_csv(db: Session, import_record: Import, organization_id: s
                     import_id=import_record.id,
                     body=body,
                     content_hash=feedback_hash,
-                    subject=str(row.get("subject", "")).strip() or None,
-                    channel=str(row.get("channel", "")).strip() or None,
-                    rating=float(row["rating"]) if pd.notna(row.get("rating")) else None,
-                    feedback_date=pd.to_datetime(row["feedback_date"]) if pd.notna(row.get("feedback_date")) else None,
+                    subject=subject,
+                    channel=channel,
+                    rating=rating,
+                    feedback_date=feedback_date,
                 )
                 db.add(feedback)
                 rows_processed += 1
@@ -297,3 +314,84 @@ def get_import_by_id(db: Session, import_id: str, organization_id: str) -> Impor
         )
         .first()
     )
+
+# ── Mapping de colonnes ──────────────────────────────────────────────────────
+
+FEEDBACK_SYNONYMS = {
+    "email": ["email", "requester_email", "customer_email", "mail", "e-mail", "from_email", "user_email", "courriel"],
+    "body": ["body", "description", "message", "content", "text", "comment", "feedback", "ticket_body", "texte", "contenu", "commentaire"],
+    "subject": ["subject", "title", "objet", "titre", "topic", "sujet", "summary"],
+    "rating": ["rating", "note", "score", "satisfaction", "nps", "stars", "etoiles", "grade"],
+    "channel": ["channel", "source", "canal", "via", "type", "origin", "origine"],
+    "feedback_date": ["feedback_date", "created_at", "date", "timestamp", "submitted_at", "opened_at", "date_creation", "created", "date_created"],
+}
+
+ORDER_SYNONYMS = {
+    "email": ["email", "customer_email", "requester_email", "mail", "e-mail", "buyer_email"],
+    "total_amount": ["total_amount", "amount", "total", "price", "montant", "order_total", "subtotal", "revenue"],
+    "order_date": ["order_date", "date", "created_at", "timestamp", "purchase_date", "ordered_at", "date_commande"],
+    "refund_amount": ["refund_amount", "refund", "remboursement", "refunded", "refund_total"],
+    "status": ["status", "statut", "state", "etat", "order_status"],
+    "product_name": ["product_name", "product", "item", "produit", "name", "article", "sku_name"],
+    "order_id": ["order_id", "id", "order_number", "numero_commande", "reference", "ref", "external_id"],
+}
+
+
+def suggest_mapping(columns: list[str], synonyms: dict) -> dict:
+    """
+    Suggère automatiquement un mapping entre les colonnes du fichier
+    et les colonnes attendues par CFRI.
+    
+    Retourne un dict : { "colonne_cfri": "colonne_fichier" ou None }
+    """
+    columns_lower = {col.lower().strip(): col for col in columns}
+    mapping = {}
+
+    for cfri_field, synonyms_list in synonyms.items():
+        matched = None
+        for synonym in synonyms_list:
+            if synonym in columns_lower:
+                matched = columns_lower[synonym]
+                break
+        mapping[cfri_field] = matched
+
+    return mapping
+
+
+def preview_csv(file_content: bytes, import_type: str) -> dict:
+    """
+    Lit le CSV, détecte les colonnes, suggère le mapping.
+    Retourne un aperçu des premières lignes + le mapping suggéré.
+    """
+    import io
+
+    try:
+        # Détecter l'encodage
+        try:
+            df = pd.read_csv(io.BytesIO(file_content), nrows=5, encoding="utf-8")
+        except UnicodeDecodeError:
+            df = pd.read_csv(io.BytesIO(file_content), nrows=5, encoding="latin-1")
+
+        columns = list(df.columns)
+        synonyms = FEEDBACK_SYNONYMS if import_type == "feedbacks" else ORDER_SYNONYMS
+
+        mapping = suggest_mapping(columns, synonyms)
+
+        # Aperçu des 3 premières lignes
+        preview_rows = df.head(3).fillna("").to_dict(orient="records")
+
+        # Colonnes obligatoires manquantes
+        required = ["email", "body"] if import_type == "feedbacks" else ["email", "total_amount"]
+        missing_required = [field for field in required if mapping.get(field) is None]
+
+        return {
+            "columns": columns,
+            "mapping": mapping,
+            "preview_rows": preview_rows,
+            "missing_required": missing_required,
+            "can_import": len(missing_required) == 0,
+            "total_rows": None,  # On ne lit pas tout le fichier pour le preview
+        }
+
+    except Exception as e:
+        raise ValueError(f"Impossible de lire le fichier CSV : {str(e)}")
