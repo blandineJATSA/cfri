@@ -32,6 +32,7 @@ export interface DashboardSummary {
   total_refunds: number
   problems_count: number
   at_risk_customers: number
+  is_demo: boolean
 }
 
 export interface Problem {
