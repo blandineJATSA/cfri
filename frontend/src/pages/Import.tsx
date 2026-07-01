@@ -199,7 +199,7 @@ export default function ImportPage() {
       }
       setFeedbackPreview(null)
       setFeedbackFile(null)
-      refetchImports()
+      setTimeout(() => refetchImports(), 500)
     },
     onError: () => addLog('❌ Erreur lors de l\'import des feedbacks'),
   })
@@ -213,7 +213,7 @@ export default function ImportPage() {
       }
       setOrderPreview(null)
       setOrderFile(null)
-      refetchImports()
+      setTimeout(() => refetchImports(), 500)
     },
     onError: () => addLog('❌ Erreur lors de l\'import des commandes'),
   })
