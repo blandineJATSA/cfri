@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { apiClient, PreviewResult, ColumnMapping } from '@/lib/api'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -56,9 +56,7 @@ function MappingEditor({
         </p>
         <div className="flex flex-wrap gap-2">
           {preview.columns.map(col => (
-            <Badge key={col} variant="outline" className="text-xs">
-              {col}
-            </Badge>
+            <Badge key={col} variant="outline" className="text-xs">{col}</Badge>
           ))}
         </div>
       </div>
@@ -76,10 +74,7 @@ function MappingEditor({
             <select
               value={mapping[cfriField] ?? ''}
               onChange={(e) =>
-                setMapping(prev => ({
-                  ...prev,
-                  [cfriField]: e.target.value || null,
-                }))
+                setMapping(prev => ({ ...prev, [cfriField]: e.target.value || null }))
               }
               className="flex-1 text-xs border border-zinc-200 rounded-md px-2 py-1.5 bg-white text-zinc-700 focus:outline-none focus:ring-1 focus:ring-zinc-400"
             >
@@ -131,7 +126,7 @@ function MappingEditor({
         <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 flex items-start gap-2">
           <AlertTriangle className="h-4 w-4 text-red-500 shrink-0 mt-0.5" />
           <p className="text-xs text-red-700">
-            Champs obligatoires non mappés : {missingRequired.join(', ')}. Vous devez les associer pour continuer.
+            Champs obligatoires non mappés : {missingRequired.join(', ')}.
           </p>
         </div>
       )}
@@ -154,6 +149,7 @@ function MappingEditor({
 }
 
 export default function ImportPage() {
+  const queryClient = useQueryClient()
   const [feedbackFile, setFeedbackFile] = useState<File | null>(null)
   const [orderFile, setOrderFile] = useState<File | null>(null)
   const [feedbackPreview, setFeedbackPreview] = useState<PreviewResult | null>(null)
@@ -168,7 +164,7 @@ export default function ImportPage() {
     onSuccess: (data) => {
       setFeedbackPreview(data)
       if (data.missing_required.length > 0) {
-        addLog(`⚠️ Colonnes obligatoires non détectées : ${data.missing_required.join(', ')} — vérifiez le mapping`)
+        addLog(`⚠️ Colonnes obligatoires non détectées : ${data.missing_required.join(', ')}`)
       } else {
         addLog(`✅ Fichier analysé — ${data.columns.length} colonnes détectées`)
       }
@@ -181,7 +177,7 @@ export default function ImportPage() {
     onSuccess: (data) => {
       setOrderPreview(data)
       if (data.missing_required.length > 0) {
-        addLog(`⚠️ Colonnes obligatoires non détectées : ${data.missing_required.join(', ')} — vérifiez le mapping`)
+        addLog(`⚠️ Colonnes obligatoires non détectées : ${data.missing_required.join(', ')}`)
       } else {
         addLog(`✅ Fichier commandes analysé — ${data.columns.length} colonnes détectées`)
       }
@@ -199,7 +195,8 @@ export default function ImportPage() {
       }
       setFeedbackPreview(null)
       setFeedbackFile(null)
-      setTimeout(() => refetchImports(), 500)
+      queryClient.invalidateQueries({ queryKey: ['imports'] })
+      queryClient.invalidateQueries({ queryKey: ['analysis-status'] })
     },
     onError: () => addLog('❌ Erreur lors de l\'import des feedbacks'),
   })
@@ -213,7 +210,7 @@ export default function ImportPage() {
       }
       setOrderPreview(null)
       setOrderFile(null)
-      setTimeout(() => refetchImports(), 500)
+      queryClient.invalidateQueries({ queryKey: ['imports'] })
     },
     onError: () => addLog('❌ Erreur lors de l\'import des commandes'),
   })
@@ -239,29 +236,28 @@ export default function ImportPage() {
       const jobId = data.job_id
       if (jobId) {
         const pollStatus = async (attempts = 0) => {
-  if (attempts > 20) {
-    addLog('⏱️ Analyse en cours en arrière-plan — consultez le dashboard plus tard')
-    return
-  }
-  const status = await apiClient.getJobStatus(jobId)
-    if (status.status === 'finished') {
-      addLog(`✅ ${status.result?.success ?? 20} feedbacks analysés`)
-      setTimeout(() => analysisMutation.mutate(), 2000)
-    } else if (status.status === 'failed') {
-      addLog('❌ Erreur — nouvelle tentative dans 5s...')
-      setTimeout(() => analysisMutation.mutate(), 5000)
-    } else {
-      setTimeout(() => pollStatus(attempts + 1), 3000)
-    }
-  }
-  setTimeout(() => pollStatus(0), 3000)
-        
+          if (attempts > 20) {
+            addLog('⏱️ Analyse en cours — consultez le dashboard plus tard')
+            return
+          }
+          try {
+            const status = await apiClient.getJobStatus(jobId)
+            if (status.status === 'finished') {
+              addLog(`✅ ${status.result?.success ?? 20} feedbacks analysés`)
+              setTimeout(() => analysisMutation.mutate(), 2000)
+            } else if (status.status === 'failed') {
+              addLog('❌ Erreur analyse')
+            } else {
+              setTimeout(() => pollStatus(attempts + 1), 3000)
+            }
+          } catch {
+            addLog('⏱️ Analyse en cours — consultez le dashboard plus tard')
+          }
+        }
+        setTimeout(() => pollStatus(0), 3000)
       }
     },
-    onError: () => {
-      addLog('❌ Erreur — nouvelle tentative dans 5s...')
-      setTimeout(() => analysisMutation.mutate(), 5000)
-    },
+    onError: () => addLog('❌ Backend non disponible — vérifiez que le serveur tourne'),
   })
 
   const scoringMutation = useMutation({
@@ -274,7 +270,7 @@ export default function ImportPage() {
     onError: () => addLog('❌ Erreur lors du calcul du scoring'),
   })
 
-  const { data: imports, refetch: refetchImports } = useQuery({
+  const { data: imports } = useQuery({
     queryKey: ['imports'],
     queryFn: apiClient.getImports,
   })
@@ -283,7 +279,7 @@ export default function ImportPage() {
     mutationFn: apiClient.deleteImport,
     onSuccess: () => {
       addLog('🗑️ Import supprimé')
-      refetchImports()
+      queryClient.invalidateQueries({ queryKey: ['imports'] })
     },
   })
 
@@ -312,7 +308,6 @@ export default function ImportPage() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="space-y-4">
 
-          {/* Upload feedbacks */}
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center gap-2">
@@ -365,7 +360,6 @@ export default function ImportPage() {
             </CardContent>
           </Card>
 
-          {/* Upload commandes */}
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center gap-2">
@@ -419,7 +413,6 @@ export default function ImportPage() {
             </CardContent>
           </Card>
 
-          {/* Étapes suivantes */}
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium">Étapes suivantes</CardTitle>
@@ -476,10 +469,7 @@ export default function ImportPage() {
           </Card>
         </div>
 
-        {/* Colonne droite */}
         <div className="space-y-4">
-
-          {/* Journal d'activité */}
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center gap-2">
@@ -509,7 +499,6 @@ export default function ImportPage() {
             </CardContent>
           </Card>
 
-          {/* Historique des imports */}
           {imports && imports.length > 0 && (
             <Card>
               <CardHeader>
@@ -524,9 +513,7 @@ export default function ImportPage() {
                     className="flex items-center justify-between py-2 border-b border-zinc-100 last:border-0"
                   >
                     <div>
-                      <p className="text-xs font-medium text-zinc-700">
-                        {imp.filename}
-                      </p>
+                      <p className="text-xs font-medium text-zinc-700">{imp.filename}</p>
                       <p className="text-xs text-zinc-400">
                         {imp.rows_processed} lignes ·{' '}
                         {new Date(imp.created_at).toLocaleDateString('fr-FR')}

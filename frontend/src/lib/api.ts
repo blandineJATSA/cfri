@@ -168,5 +168,5 @@ export const apiClient = {
     api.delete(`/imports/${importId}`).then(r => r.data),
 
   getImports: () =>
-    api.get<ImportRecord[]>('/imports').then(r => r.data),
+    api.get<{ imports: ImportRecord[], total: number }>('/imports').then(r => r.data.imports),
 }
